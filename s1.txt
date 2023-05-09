@@ -1,0 +1,99 @@
+if (fabs(newStudent->pStudent->gpa) >=
+          3.5) { // checks if student is honor roll student
+        StudentNode *newHonorStudent = (StudentNode *)malloc(sizeof(StudentNode));
+      newHonorStudent->pNext = NULL;
+      newHonorStudent->pStudent = newStudent->pStudent;
+        
+        if ((*database)->pHonorRollList == NULL) {
+          (*database)->pHonorRollList = newHonorStudent;
+          HonorRollStudent = (*database)->pHonorRollList;
+        } else {
+          HonorRollStudent->pNext = newHonorStudent;
+          HonorRollStudent = HonorRollStudent->pNext;
+          HonorRollStudent->pNext = NULL;
+        }
+        
+      }
+      
+      if (fabs(newStudent->pStudent->gpa) <=
+          2.0) { // check if student is on probation
+        StudentNode *newProb = (StudentNode *)malloc(sizeof(StudentNode));
+      newProb->pNext = NULL;
+      newProb->pStudent = newStudent->pStudent;
+        
+        if ((*database)->pAcademicProbationList == NULL) {
+          (*database)->pAcademicProbationList = newProb;
+          probationStudent = (*database)->pAcademicProbationList;
+        } else {
+          probationStudent->pNext = newProb;
+          probationStudent = probationStudent->pNext;
+          probationStudent->pNext = NULL;
+        }
+      }
+      
+      if (newStudent->pStudent->creditHours >= 0 &&
+          newStudent->pStudent->creditHours <=
+              29) { // check which year the student is in
+        // freshman
+        StudentNode *newFresh = (StudentNode *)malloc(sizeof(StudentNode));
+      newFresh->pNext = NULL;
+      newFresh->pStudent = newStudent->pStudent;
+        
+        if ((*database)->pFreshmanList == NULL) {
+          (*database)->pFreshmanList = newFresh;
+          freshman = (*database)->pFreshmanList;
+        } else {
+          freshman->pNext = newFresh;
+          freshman = freshman->pNext;
+          freshman->pNext = NULL;
+        }
+      } else if (newStudent->pStudent->creditHours >= 30 &&
+                 newStudent->pStudent->creditHours <= 59) {
+        // sophomore
+        StudentNode *newSoph = (StudentNode *)malloc(sizeof(StudentNode));
+      newSoph->pNext = NULL;
+      newSoph->pStudent = newStudent->pStudent;
+        
+        if ((*database)->pSophomoreList == NULL) {
+          (*database)->pSophomoreList = newSoph;
+          sophomore = (*database)->pSophomoreList;
+        } else {
+          sophomore->pNext = newSoph;
+          sophomore = sophomore->pNext;
+          sophomore->pNext = NULL;
+        }
+
+      } else if (newStudent->pStudent->creditHours >= 60 &&
+                 newStudent->pStudent->creditHours <= 89) {
+        // junior
+        StudentNode *newJun = (StudentNode *)malloc(sizeof(StudentNode));
+      newJun->pNext = NULL;
+      newJun->pStudent = newStudent->pStudent;
+        
+        if ((*database)->pJuniorList == NULL) {
+          (*database)->pJuniorList = newJun;
+          junior = (*database)->pJuniorList;
+        } else {
+          junior->pNext = newJun;
+          junior = junior->pNext;
+          junior->pNext = NULL;
+        }
+        
+      } else if(newStudent->pStudent->creditHours >= 90) {
+        // senior
+        StudentNode *newSen = (StudentNode *)malloc(sizeof(StudentNode));
+      newSen->pNext = NULL;
+      newSen->pStudent = newStudent->pStudent;
+        
+        if ((*database)->pSeniorList == NULL) {
+          (*database)->pSeniorList = newSen;
+          senior = (*database)->pSeniorList;
+        } else {
+          senior->pNext = newSen;
+          senior = senior->pNext;
+          senior->pNext = NULL;
+        }
+      } else {
+        printf("Error, no class?\n");
+        //shouldn't print
+      }

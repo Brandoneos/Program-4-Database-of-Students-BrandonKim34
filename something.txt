@@ -1,0 +1,91 @@
+StudentNode *curr1 = database->pHonorRollList;
+  StudentNode *prev1 = NULL;
+  while (curr1 != NULL) {
+    if (strcmp(curr1->pStudent->id, id1) == 0) {
+      if (prev1 == NULL) {
+        database->pHonorRollList = curr1->pNext;
+      } else {
+        prev1->pNext = curr1->pNext;
+      }
+      free(curr1);
+      break;
+    }
+    prev1 = curr1;
+    curr1 = curr1->pNext;
+  }
+  StudentNode *curr2 = database->pAcademicProbationList;
+  StudentNode *prev2 = NULL;
+  while (curr2 != NULL) {
+    if (strcmp(curr2->pStudent->id, id1) == 0) {
+      if (prev2 == NULL) {
+        database->pAcademicProbationList = curr2->pNext;
+      } else {
+        prev2->pNext = curr2->pNext;
+      }
+      free(curr2);
+      break;
+    }
+    prev2 = curr2;
+    curr2 = curr2->pNext;
+  }
+  StudentNode *curr3 = database->pFreshmanList;
+  StudentNode *prev3 = NULL;
+  while (curr3 != NULL) {
+    if (strcmp(curr3->pStudent->id, id1) == 0) {
+      if (prev3 == NULL) {
+        database->pFreshmanList = curr3->pNext;
+      } else {
+        prev3->pNext = curr3->pNext;
+      }
+      free(curr3);
+      break;
+    }
+    prev3 = curr3;
+    curr3 = curr3->pNext;
+  }
+  StudentNode *curr4 = database->pSophomoreList;
+  StudentNode *prev4 = NULL;
+  while (curr4 != NULL) {
+    if (strcmp(curr4->pStudent->id, id1) == 0) {
+      if (prev4 == NULL) {
+        database->pSophomoreList = curr4->pNext;
+      } else {
+        prev4->pNext = curr4->pNext;
+      }
+      free(curr4);
+      break;
+    }
+    prev4 = curr4;
+    curr4 = curr4->pNext;
+  }
+  StudentNode *curr5 = database->pJuniorList;
+  StudentNode *prev5 = NULL;
+  while (curr5 != NULL) {
+    if (strcmp(curr5->pStudent->id, id1) == 0) {
+      if (prev5 == NULL) {
+        database->pJuniorList = curr5->pNext;
+      } else {
+        prev5->pNext = curr5->pNext;
+      }
+      free(curr5);
+      break;
+    }
+    prev5 = curr5;
+    curr5 = curr5->pNext;
+  }
+  StudentNode *curr6 = database->pSeniorList;
+  StudentNode *prev6 = NULL;
+  while (curr6 != NULL) {
+    if (strcmp(curr6->pStudent->id, id1) == 0) {
+      if (prev6 == NULL) {
+        database->pSeniorList = curr6->pNext;
+      } else {
+        prev6->pNext = curr6->pNext;
+      }
+      free(curr6);
+      break;
+    }
+    prev6 = curr6;
+    curr6 = curr6->pNext;
+  }
+  
